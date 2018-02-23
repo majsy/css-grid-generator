@@ -12,6 +12,8 @@ export default class InteractiveContainer extends React.Component {
     this.props.handleClickRemove();
   }
 
+  // todo: select how many columns/per
+  
   render() {
     return (
       <div className="interactiveContainer">
