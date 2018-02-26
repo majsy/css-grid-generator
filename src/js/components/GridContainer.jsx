@@ -14,8 +14,13 @@ export default class GridContainer extends React.Component {
   }
 
   render() {
+    const gridStyles = {
+      gridGap: this.props.gridGap,
+      gridAutoRows: this.props.rowHeight
+    }
+
     return (
-      <div className="gridContainer">
+      <div className="gridContainer" style={gridStyles}>
         { this.renderGridItems() }
       </div>
     )
