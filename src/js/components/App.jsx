@@ -12,7 +12,8 @@ export default class App extends React.Component {
       gridGap: 10,
       gridGapMax: 100,
       rowHeight: 120,
-      columnsPerRow: 3
+      columnsPerRow: 3,
+      justifyItems: 'center'
     }
   }
 

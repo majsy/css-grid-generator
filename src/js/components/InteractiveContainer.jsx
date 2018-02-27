@@ -6,6 +6,17 @@ import Input from './Input.jsx';
 import Dropdown from './Dropdown.jsx';
 
 export default class InteractiveContainer extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      justifyItems: [
+        'start',
+        'end',
+        'center'
+      ]
+    }
+  }
 
   handleClickAdd = () => {
     this.props.handleClickAdd();
@@ -34,6 +45,7 @@ export default class InteractiveContainer extends React.Component {
         <Input name="rowHeight" handleInput={this.handleInput} label="Row Height" />
         <Input label="Column width" />
         <Dropdown gridItems={this.props.gridItems} handleSelect={this.handleSelect} />
+        <Dropdown justifyItems={this.state.justifyItems} handleSelect={this.handleSelect} />
       </div>
     )
   }
