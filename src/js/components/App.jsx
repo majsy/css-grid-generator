@@ -11,7 +11,8 @@ export default class App extends React.Component {
       gridItems: 3,
       gridGap: 10,
       gridGapMax: 100,
-      rowHeight: 120
+      rowHeight: 120,
+      columnsPerRow: 3
     }
   }
 
@@ -28,16 +29,24 @@ export default class App extends React.Component {
     this.setState({[input.name]: Number(input.value)})
   }
 
+  handleSelect = (e) => {
+    let select = e.target;
+    this.setState({[select.name]: Number(select.value)})
+  }
+
   render() {
     return (
       <div>
         <InteractiveContainer handleClickAdd={this.handleClickAdd}
           handleClickRemove={this.handleClickRemove}
           handleInput={this.handleInput}
-          gridGapMax={this.state.gridGapMax} />
+          gridGapMax={this.state.gridGapMax}
+          gridItems={this.state.gridItems}
+          handleSelect={this.handleSelect} />
         <GridContainer gridItems={this.state.gridItems} 
           gridGap={this.state.gridGap}
-          rowHeight={this.state.rowHeight} />
+          rowHeight={this.state.rowHeight}
+          columnsPerRow={this.state.columnsPerRow} />
       </div>
     )
   }

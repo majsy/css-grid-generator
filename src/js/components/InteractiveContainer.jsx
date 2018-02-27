@@ -19,6 +19,10 @@ export default class InteractiveContainer extends React.Component {
     this.props.handleInput(e);
   }
 
+  handleSelect = (e) => {
+    this.props.handleSelect(e)
+  }
+
   // todo: select how many columns/per
 
   render() {
@@ -29,6 +33,7 @@ export default class InteractiveContainer extends React.Component {
         <Input name="gridGap" handleInput={this.handleInput} label="Grid Gap" max={this.props.gridGapMax} />
         <Input name="rowHeight" handleInput={this.handleInput} label="Row Height" />
         <Input label="Column width" />
+        <Dropdown gridItems={this.props.gridItems} handleSelect={this.handleSelect} />
       </div>
     )
   }
