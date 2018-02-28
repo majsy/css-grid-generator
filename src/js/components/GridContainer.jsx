@@ -17,7 +17,9 @@ export default class GridContainer extends React.Component {
     const gridStyles = {
       gridGap: this.props.gridGap,
       gridAutoRows: this.props.rowHeight,
-      gridTemplateColumns: `repeat(${this.props.columnsPerRow}, 100px)`
+      gridTemplateColumns: `repeat(${this.props.columnsPerRow}, 1fr)`,
+      justifyContent: this.props.justifyContent,
+      alignContent: this.props.alignContent
     }
 
     return (

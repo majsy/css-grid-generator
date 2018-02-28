@@ -13,7 +13,8 @@ export default class App extends React.Component {
       gridGapMax: 100,
       rowHeight: 120,
       columnsPerRow: 3,
-      justifyItems: 'center'
+      justifyContent: 'start',
+      alignContent: 'start'
     }
   }
 
@@ -32,7 +33,7 @@ export default class App extends React.Component {
 
   handleSelect = (e) => {
     let select = e.target;
-    this.setState({[select.name]: Number(select.value)})
+    this.setState({[select.name]: select.value})
   }
 
   render() {
@@ -47,7 +48,9 @@ export default class App extends React.Component {
         <GridContainer gridItems={this.state.gridItems} 
           gridGap={this.state.gridGap}
           rowHeight={this.state.rowHeight}
-          columnsPerRow={this.state.columnsPerRow} />
+          columnsPerRow={this.state.columnsPerRow}
+          justifyContent={this.state.justifyContent}
+          alignContent={this.state.alignContent} />
       </div>
     )
   }

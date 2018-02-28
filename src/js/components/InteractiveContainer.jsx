@@ -10,11 +10,13 @@ export default class InteractiveContainer extends React.Component {
     super();
 
     this.state = {
-      justifyItems: [
+      alignment: [
         'start',
         'end',
-        'center'
-      ]
+        'center',
+        'space-between',
+        'space-around'
+      ],
     }
   }
 
@@ -34,18 +36,16 @@ export default class InteractiveContainer extends React.Component {
     this.props.handleSelect(e)
   }
 
-  // todo: select how many columns/per
-
   render() {
     return (
       <div className="interactiveContainer">
         <ButtonAdd handleClickAdd={this.handleClickAdd} />
         <ButtonRemove handleClickRemove={this.handleClickRemove} />
-        <Input name="gridGap" handleInput={this.handleInput} label="Grid Gap" max={this.props.gridGapMax} />
-        <Input name="rowHeight" handleInput={this.handleInput} label="Row Height" />
-        <Input label="Column width" />
-        <Dropdown gridItems={this.props.gridItems} handleSelect={this.handleSelect} />
-        <Dropdown justifyItems={this.state.justifyItems} handleSelect={this.handleSelect} />
+        <Input name="gridGap" handleInput={this.handleInput} max={this.props.gridGapMax} />
+        <Input name="rowHeight" handleInput={this.handleInput} />
+        <Dropdown name="columnsPerRow" gridItems={this.props.gridItems} handleSelect={this.handleSelect} />
+        <Dropdown name="justifyContent" alignment={this.state.alignment} handleSelect={this.handleSelect} />
+        <Dropdown name="alignContent" alignment={this.state.alignment} handleSelect={this.handleSelect} />
       </div>
     )
   }
