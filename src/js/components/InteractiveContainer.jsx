@@ -43,6 +43,7 @@ export default class InteractiveContainer extends React.Component {
         <ButtonRemove handleClickRemove={this.handleClickRemove} />
         <Input name="gridGap" handleInput={this.handleInput} max={this.props.gridGapMax} />
         <Input name="rowHeight" handleInput={this.handleInput} />
+        <Input name="columnWidth" handleInput={this.handleInput} />
         <Dropdown name="columnsPerRow" gridItems={this.props.gridItems} handleSelect={this.handleSelect} />
         <Dropdown name="justifyContent" alignment={this.state.alignment} handleSelect={this.handleSelect} />
         <Dropdown name="alignContent" alignment={this.state.alignment} handleSelect={this.handleSelect} />

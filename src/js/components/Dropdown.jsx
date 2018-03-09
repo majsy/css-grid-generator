@@ -2,6 +2,16 @@ import React from 'react';
 // import '../../scss/components/_button-amount.scss';
 
 export default class Dropdown extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      gridItemsPlaceholder: 3
+    }
+  }
+
+  // todo add placeholder for default styles
+
   renderDropdownOptions() {
     const items = this.props.gridItems || this.props.alignment;
     const options = [];

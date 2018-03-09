@@ -12,6 +12,7 @@ export default class App extends React.Component {
       gridGap: 10,
       gridGapMax: 100,
       rowHeight: 120,
+      columnWidth: null,
       columnsPerRow: 3,
       justifyContent: 'start',
       alignContent: 'start'
@@ -48,6 +49,7 @@ export default class App extends React.Component {
         <GridContainer gridItems={this.state.gridItems} 
           gridGap={this.state.gridGap}
           rowHeight={this.state.rowHeight}
+          columnWidth={this.state.columnWidth}
           columnsPerRow={this.state.columnsPerRow}
           justifyContent={this.state.justifyContent}
           alignContent={this.state.alignContent} />

@@ -3,6 +3,21 @@ import '../../scss/components/_grid-container.scss';
 import GridItem from './GridItem.jsx';
 
 export default class GridContainer extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      colWidthIsUpdated: false,
+      itemsAreStretched: false
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.columnWidth !== nextProps.columnWidth) {
+      this.setState({colWidthIsUpdated: true})
+    }
+  }
+
   renderGridItems() {
     const gridItems = this.props.gridItems;
     const items = [];
@@ -13,11 +28,30 @@ export default class GridContainer extends React.Component {
     return items
   }
 
+  renderColumnWidth() {
+    const columnWidth = this.props.columnWidth;
+    const columnsPerRow = this.props.columnsPerRow;
+
+    if (this.state.colWidthIsUpdated) {
+      return `repeat(${columnsPerRow}, ${columnWidth}px)`
+    } else {
+      return `repeat(${columnsPerRow}, 1fr)`
+    }
+
+    // todo - add option of stretching items: repeat(x, minmax(width, 1fr))
+    // todo - if columsPerRow is wider than container width, change columnsPerRow to fit in container
+  }
+
+  renderColPerRow() {
+    
+  }
+
   render() {
+    // this.renderColPerRow()
     const gridStyles = {
       gridGap: this.props.gridGap,
       gridAutoRows: this.props.rowHeight,
-      gridTemplateColumns: `repeat(${this.props.columnsPerRow}, 1fr)`,
+      gridTemplateColumns: this.renderColumnWidth(),
       justifyContent: this.props.justifyContent,
       alignContent: this.props.alignContent
     }
@@ -28,4 +62,4 @@ export default class GridContainer extends React.Component {
       </div>
     )
   }
-}
+} 
