@@ -9,7 +9,7 @@ export default class ButtonRemove extends React.Component {
   render() {
     return (
       <div>
-        <label>Remove Item</label>
+        <label>Remove Item:</label>
         <button className="buttonAmount" onClick={this.handleClickRemove}>
           -
         </button>

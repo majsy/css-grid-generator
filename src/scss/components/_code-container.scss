@@ -1,0 +1,21 @@
+@import '../base/variables';
+@import '../base/typography';
+
+.CodeContainer {
+  background-color: $white;
+  padding: 20px;
+  border-radius: $border-radius;
+  height: 100%;
+
+  ul {
+    li {
+      @extend .display3;
+      padding-left: 20px;
+  
+      &:first-child,
+      &:last-child {
+        padding-left: 0;
+      }
+    }
+  } 
+}

@@ -2,14 +2,6 @@ import React from 'react';
 // import '../../scss/components/_button-amount.scss';
 
 export default class Dropdown extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      gridItemsPlaceholder: 3
-    }
-  }
-
   // todo add placeholder for default styles
 
   renderDropdownOptions() {
@@ -35,10 +27,12 @@ export default class Dropdown extends React.Component {
   }
 
   render() {
+    const items = this.props.gridItems || this.props.alignment;
+
     return (
       <div>
-        <label htmlFor="dropdownSelect">{this.props.name}</label>
-        <select className="dropdown" name={this.props.name} id="dropdownSelect" onChange={this.handleSelect}>
+        <label htmlFor="dropdownSelect">{this.props.name}:</label>
+        <select className="dropdown" value={this.props.defaultValue} name={this.props.name} id="dropdownSelect" onChange={this.handleSelect}>
           { this.renderDropdownOptions() }
         </select>
       </div>

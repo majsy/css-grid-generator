@@ -2,6 +2,8 @@ import React from 'react';
 // import '../scss/main.scss';
 import InteractiveContainer from './InteractiveContainer.jsx';
 import GridContainer from './GridContainer.jsx';
+import CodeContainer from './CodeContainer.jsx';
+import Header from './Header.jsx';
 
 export default class App extends React.Component {
   constructor() {
@@ -10,12 +12,12 @@ export default class App extends React.Component {
     this.state = {
       gridItems: 3,
       gridGap: 10,
-      gridGapMax: 100,
       rowHeight: 120,
-      columnWidth: null,
+      columnWidth: 150,
       columnsPerRow: 3,
       justifyContent: 'start',
-      alignContent: 'start'
+      alignContent: 'start',
+      colIsStretched: false
     }
   }
 
@@ -37,22 +39,49 @@ export default class App extends React.Component {
     this.setState({[select.name]: select.value})
   }
 
+  handleCheckboxInput = () => {
+    this.setState({colIsStretched: !this.state.colIsStretched})
+  }
+
+  renderColumnWidth() {
+    const isStretched = this.state.colIsStretched;
+    const columnsPerRow = this.state.columnsPerRow;
+    const columnWidth = this.state.columnWidth;
+
+    if (isStretched) {
+      return `repeat(${columnsPerRow}, minmax(auto, 1fr))`
+    } else {
+      return `repeat(${columnsPerRow}, minmax(auto, ${columnWidth}px))`
+    }
+  }
+
   render() {
+    const gridStyles = {
+      gridGap: this.state.gridGap,
+      gridAutoRows: this.state.rowHeight,
+      gridTemplateColumns: this.renderColumnWidth(),
+      justifyContent: this.state.justifyContent,
+      alignContent: this.state.alignContent
+    }
+
     return (
       <div>
-        <InteractiveContainer handleClickAdd={this.handleClickAdd}
-          handleClickRemove={this.handleClickRemove}
-          handleInput={this.handleInput}
-          gridGapMax={this.state.gridGapMax}
-          gridItems={this.state.gridItems}
-          handleSelect={this.handleSelect} />
-        <GridContainer gridItems={this.state.gridItems} 
-          gridGap={this.state.gridGap}
-          rowHeight={this.state.rowHeight}
-          columnWidth={this.state.columnWidth}
-          columnsPerRow={this.state.columnsPerRow}
-          justifyContent={this.state.justifyContent}
-          alignContent={this.state.alignContent} />
+        <Header />
+        <div className="upper-container">
+          <InteractiveContainer handleClickAdd={this.handleClickAdd}
+            handleClickRemove={this.handleClickRemove}
+            handleInput={this.handleInput}
+            gridGap={this.state.gridGap}
+            rowHeight={this.state.rowHeight}
+            gridItems={this.state.gridItems}
+            handleSelect={this.handleSelect}
+            handleCheckboxInput={this.handleCheckboxInput}
+            columnsPerRow={this.state.columnsPerRow}
+            columnWidth={this.state.columnWidth} />
+          <CodeContainer gridStyles={gridStyles} />
+        </div>
+        <GridContainer gridStyles={gridStyles}
+          gridItems={this.state.gridItems} />
       </div>
     )
   }

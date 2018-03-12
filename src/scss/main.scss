@@ -1,12 +1,18 @@
 @import 'base/variables';
+@import 'base/global';
+@import 'base/typography';
 
-body {
-  color: blue;
+
+#app {
+  padding: 40px;
+  color: $pink-dark;
   background-color: $pink-bright;
-  margin: 0;
-  padding: 0;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  min-height: 100vh;
 
-  #app {
-    padding: 40px;
+  .upper-container {
+    display: flex;
+    justify-content: space-between;
   }
 }
