@@ -1,3 +1,6 @@
+@import '../base/variables';
+
 .gridItem {
-  background-color: lightblue;
+  background-color: $green;
+  border-radius: 4px;
 }

@@ -7,8 +7,7 @@ export default class GridContainer extends React.Component {
     super();
 
     this.state = {
-      colWidthIsUpdated: false,
-      itemsAreStretched: false
+      colWidthIsUpdated: false
     }
   }
 
@@ -33,21 +32,15 @@ export default class GridContainer extends React.Component {
     const columnsPerRow = this.props.columnsPerRow;
 
     if (this.state.colWidthIsUpdated) {
-      return `repeat(${columnsPerRow}, ${columnWidth}px)`
+      return `repeat(${columnsPerRow}, minmax(auto, ${columnWidth}px))`
     } else {
-      return `repeat(${columnsPerRow}, 1fr)`
+      return `repeat(${columnsPerRow}, minmax(auto, 1fr))`
     }
 
-    // todo - add option of stretching items: repeat(x, minmax(width, 1fr))
-    // todo - if columsPerRow is wider than container width, change columnsPerRow to fit in container
-  }
-
-  renderColPerRow() {
-    
+    // todo - if columWidth x columsPerRow is wider than container width, change columnWidth to fit in container
   }
 
   render() {
-    // this.renderColPerRow()
     const gridStyles = {
       gridGap: this.props.gridGap,
       gridAutoRows: this.props.rowHeight,
