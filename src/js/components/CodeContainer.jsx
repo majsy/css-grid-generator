@@ -31,6 +31,18 @@ export default class CodeContainer extends React.Component {
     )
   }
 
+  getCSSListText() {
+    const styles = this.props.gridStyles;
+ 
+    const stylesToText = JSON.stringify(styles);
+
+    const replaced = stylesToText.replace(/,/g, ';\n');
+
+    console.log(replaced)
+
+    return replaced
+  }
+
   onCopy = () => {
     this.setState({isCopied: true})
     console.log(this.state.isCopied)
@@ -40,7 +52,7 @@ export default class CodeContainer extends React.Component {
     return (
       <div className="CodeContainer">
         { this.renderCSSList() }
-        <CopyToClipboard text={this.renderCSSList()}
+        <CopyToClipboard text={this.getCSSListText()}
           onCopy={this.onCopy}>
           <button>copy CSS</button>
         </CopyToClipboard>
