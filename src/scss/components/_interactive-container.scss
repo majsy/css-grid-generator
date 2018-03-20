@@ -1,3 +1,11 @@
 .interactiveContainer {
     margin-bottom: 30px;
+
+    .interactive-item {
+        margin-bottom: 8px;
+
+        label {
+            margin-right: 5px;
+        }
+    }
 }

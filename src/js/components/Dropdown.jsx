@@ -30,8 +30,8 @@ export default class Dropdown extends React.Component {
     const items = this.props.gridItems || this.props.alignment;
 
     return (
-      <div>
-        <label htmlFor="dropdownSelect">{this.props.name}:</label>
+      <div className="interactive-item">
+        <label htmlFor="dropdownSelect">{this.props.label}:</label>
         <select className="dropdown" value={this.props.defaultValue} name={this.props.name} id="dropdownSelect" onChange={this.handleSelect}>
           { this.renderDropdownOptions() }
         </select>

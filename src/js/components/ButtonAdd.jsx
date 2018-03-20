@@ -8,7 +8,7 @@ export default class ButtonAdd extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="interactive-item">
         <label>Add Item:</label>
         <button className="buttonAmount" onClick={this.handleClickAdd}>
           +

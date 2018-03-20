@@ -8,8 +8,8 @@ export default class Input extends React.Component {
 
   render() {
     return (
-      <div className="input">
-        <label htmlFor="numericInput">{this.props.name}:</label>
+      <div className="input interactive-item">
+        <label htmlFor="numericInput">{this.props.label}:</label>
         <input id="numericInput"
          type="number" 
          name={this.props.name} 

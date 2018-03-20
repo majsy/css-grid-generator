@@ -8,11 +8,11 @@ export default class Checkbox extends React.Component {
 
   render() {
     return (
-      <label>
-        Stretch columns:
+      <div className="interactive-item">
+        Stretch Columns:
         <input type="checkbox"
           onChange={this.handleCheckboxInput} />
-      </label>
+      </div>
     )
   }
 }

@@ -8,7 +8,7 @@ export default class ButtonRemove extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="interactive-item">
         <label>Remove Item:</label>
         <button className="buttonAmount" onClick={this.handleClickRemove}>
           -
