@@ -34,13 +34,17 @@ export default class CodeContainer extends React.Component {
   getCSSListText() {
     const styles = this.props.gridStyles;
  
-    const stylesToText = JSON.stringify(styles);
+    const stylesToString = JSON.stringify(styles);
 
-    const replaced = stylesToText.replace(/,/g, ';\n');
+    let replacedString = stylesToString
+      .replace(/"/g, '')
+      .replace(/,/g, ';\n')
+      .replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase() // from camelcase to dash
 
-    console.log(replaced)
 
-    return replaced
+    console.log(replacedString)
+
+    return replacedString
   }
 
   onCopy = () => {
@@ -52,7 +56,7 @@ export default class CodeContainer extends React.Component {
     return (
       <div className="CodeContainer">
         { this.renderCSSList() }
-        <CopyToClipboard text={this.getCSSListText()}
+        <CopyToClipboard text={this.getCSSListText()} 
           onCopy={this.onCopy}>
           <button className="button-copy">
             <span className="display2">copy CSS</span>
