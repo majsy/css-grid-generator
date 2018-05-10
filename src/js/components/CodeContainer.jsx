@@ -18,7 +18,10 @@ export default class CodeContainer extends React.Component {
   renderCSSList() {
     const styles = this.props.gridStyles;
 
+    console.log(styles);
+
     return (
+
       <ul>
         <li>.grid-container &#123;</li>
         <li>grid-gap: {styles.gridGap}px;</li>
@@ -33,16 +36,11 @@ export default class CodeContainer extends React.Component {
 
   getCSSListText() {
     const styles = this.props.gridStyles;
- 
-    const stylesToString = JSON.stringify(styles);
 
     let replacedString = stylesToString
       .replace(/"/g, '')
       .replace(/,/g, ';\n')
       .replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase() // from camelcase to dash
-
-
-    console.log(replacedString)
 
     return replacedString
   }
