@@ -16,45 +16,51 @@ export default class CodeContainer extends React.Component {
   }
 
   renderCSSList() {
-    const styles = this.props.gridStyles;
-
-    console.log(styles);
+    const gridStyles = this.props.gridStyles;
 
     return (
-
       <ul>
         <li>.grid-container &#123;</li>
-        <li>grid-gap: {styles.gridGap}px;</li>
-        <li>grid-auto-rows: {styles.gridAutoRows}px;</li>
-        <li>grid-template-columns: {styles.gridTemplateColumns};</li>
-        <li>justify-content: {styles.justifyContent};</li>
-        <li>align-content: {styles.alignContent};</li>
+        <li>grid-gap: {gridStyles.gridGap}px;</li>
+        <li>grid-auto-rows: {gridStyles.gridAutoRows}px;</li>
+        <li>grid-template-columns: {gridStyles.gridTemplateColumns};</li>
+        <li>justify-content: {gridStyles.justifyContent};</li>
+        <li>align-content: {gridStyles.alignContent};</li>
         <li>&#125;</li>
       </ul>
     )
   }
 
-  getCSSListText() {
+  stylesToString() {
     const styles = this.props.gridStyles;
 
-    let replacedString = stylesToString
-      .replace(/"/g, '')
-      .replace(/,/g, ';\n')
-      .replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase() // from camelcase to dash
+    let stringifiedStyles = [
+      `grid-gap: ${JSON.stringify(styles.gridGap)}px;`,
+      `grid-auto-rows: ${JSON.stringify(styles.gridAutoRows)}px;`,
+      `grid-template-columns: ${JSON.stringify(styles.gridTemplateColumns)};`,
+      `justify-content: ${JSON.stringify(styles.justifyContent)};`,
+      `align-content: ${JSON.stringify(styles.alignContent)};`,
+    ]
 
-    return replacedString
+    let string = JSON.stringify(stringifiedStyles);
+
+    const replacedString = string
+      .replace(/\[|]|\\|"/g, '') // remove \, [, ], "
+      .replace(/;,/g, ';\n') // add line break after each property
+
+    return replacedString;
   }
 
   onCopy = () => {
     this.setState({isCopied: true})
-    console.log(this.state.isCopied)
+    this.stylesToString();
   }
 
   render() {
     return (
       <div className="CodeContainer">
         { this.renderCSSList() }
-        <CopyToClipboard text={this.getCSSListText()} 
+        <CopyToClipboard text={this.stylesToString()} 
           onCopy={this.onCopy}>
           <button className="button-copy">
             <span className="display2">copy CSS</span>
