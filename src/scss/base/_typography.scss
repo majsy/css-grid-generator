@@ -3,11 +3,14 @@
 .display2,
 .display3 {
   font-family: 'Lato', sans-serif;
-  // margin: 0;
   line-height: 1.1;
   letter-spacing: 0.8px;
   color: $pink-dark;
   font-size: 50px;
+}
+
+.display1 {
+  font-weight: 700;
 }
 
 .display2 {
