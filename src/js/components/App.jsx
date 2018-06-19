@@ -21,34 +21,41 @@ export default class App extends React.Component {
     }
   }
 
-  handleClickAdd = () => {
+  onClickAdd = () => {
     this.setState({gridItems: this.state.gridItems + 1})
   }
 
-  handleClickRemove = () => {
+  onClickRemove = () => {
     this.setState({gridItems: this.state.gridItems - 1})
   }
 
-  handleInput = (e) => {
+  onButtonClick = (e) => {
+    let button = e.target;
+    if (button.name === 'addItem') {
+      this.setState({gridItems: this.state.gridItems + 1})
+    } else {
+      this.setState({gridItems: this.state.gridItems - 1})
+    }
+  }
+
+  onInputChange = (e) => {
     let input = e.target;
     this.setState({[input.name]: Number(input.value)})
   }
 
-  handleSelect = (e) => {
+  onSelectChange = (e) => {
     let select = e.target;
     this.setState({[select.name]: select.value})
   }
 
-  handleCheckboxInput = () => {
+  onCheckboxChange = () => {
     this.setState({colIsStretched: !this.state.colIsStretched})
   }
 
   renderColumnWidth() {
-    const isStretched = this.state.colIsStretched;
-    const columnsPerRow = this.state.columnsPerRow;
-    const columnWidth = this.state.columnWidth;
+    const { colIsStretched, columnsPerRow, columnWidth } = this.state;
 
-    if (isStretched) {
+    if (colIsStretched) {
       return `repeat(${columnsPerRow}, minmax(auto, 1fr))`
     } else {
       return `repeat(${columnsPerRow}, minmax(auto, ${columnWidth}px))`
@@ -64,24 +71,26 @@ export default class App extends React.Component {
       alignContent: this.state.alignContent
     }
 
+    const { gridGap, rowHeight, gridItems, columnsPerRow, columnWidth } = this.state;
+
     return (
       <div>
         <Header />
         <div className="upper-container">
-          <InteractiveContainer handleClickAdd={this.handleClickAdd}
-            handleClickRemove={this.handleClickRemove}
-            handleInput={this.handleInput}
-            gridGap={this.state.gridGap}
-            rowHeight={this.state.rowHeight}
-            gridItems={this.state.gridItems}
-            handleSelect={this.handleSelect}
-            handleCheckboxInput={this.handleCheckboxInput}
-            columnsPerRow={this.state.columnsPerRow}
-            columnWidth={this.state.columnWidth} />
+          <InteractiveContainer onButtonClick={this.onButtonClick}
+            onInputChange={this.onInputChange}
+            onSelectChange={this.onSelectChange}
+            onCheckboxChange={this.onCheckboxChange}
+
+            gridGap={gridGap}
+            rowHeight={rowHeight}
+            gridItems={gridItems}
+            columnsPerRow={columnsPerRow}
+            columnWidth={columnWidth} />
           <CodeContainer gridStyles={gridStyles} />
         </div>
         <GridContainer gridStyles={gridStyles}
-          gridItems={this.state.gridItems} />
+          gridItems={gridItems} />
       </div>
     )
   }
