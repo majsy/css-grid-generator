@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../scss/components/_interactive-container.scss';
-import ButtonAdd from './ButtonAdd.jsx';
-import ButtonRemove from './ButtonRemove.jsx';
-import Input from './Input.jsx';
-import Dropdown from './Dropdown.jsx';
-import Checkbox from './Checkbox.jsx';
+
+import ButtonAdd from './interactive-items/ButtonAdd.jsx';
+import ButtonRemove from './interactive-items/ButtonRemove.jsx';
+import Input from './interactive-items/Input.jsx';
+import Dropdown from './interactive-items/Dropdown.jsx';
+import Checkbox from './interactive-items/Checkbox.jsx';
 
 export default class InteractiveContainer extends React.Component {
   constructor() {
@@ -43,21 +44,24 @@ export default class InteractiveContainer extends React.Component {
 
   render() {
     return (
-      <div className="interactiveContainer">
+      <div className="interactive-container">
         <ButtonAdd handleClickAdd={this.handleClickAdd} />
         <ButtonRemove handleClickRemove={this.handleClickRemove} />
         <Input name="gridGap" 
           label="Grid Gap"
           handleInput={this.handleInput} 
-          defaultValue={this.props.gridGap} />
+          defaultValue={this.props.gridGap}
+          className="input" />
         <Input name="rowHeight"
           label="Row Height" 
           handleInput={this.handleInput}
-          defaultValue={this.props.rowHeight} />
+          defaultValue={this.props.rowHeight}
+          className="input" />
         <Input name="columnWidth" 
           label="Column Width"
           handleInput={this.handleInput}
-          defaultValue={this.props.columnWidth} />
+          defaultValue={this.props.columnWidth}
+          className="input" />
         <Checkbox handleCheckboxInput={this.props.handleCheckboxInput} />
         <Dropdown name="columnsPerRow" 
           label="Columns per Row"

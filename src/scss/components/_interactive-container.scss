@@ -1,18 +1,13 @@
-.interactiveContainer {
+.interactive-container {
   margin-bottom: 30px;
 
-    .interactive-item {
-      margin-bottom: 8px;
-
-    label {
-      margin-right: 5px;
-    }
+  label {
+    margin-right: 5px;
   }
-}
 
-.input-item {
   .input {
     border-radius: 2px;
     height: 30px;
+    margin-bottom: 8px;
   }
 }
