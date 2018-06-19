@@ -4,17 +4,16 @@ import { camelToTitle } from '../../helper.js';
 export default class Dropdown extends React.Component {
 
   renderDropdownOptions() {
-    const { gridItems, alignment } = this.props;
-    const items = gridItems || alignment;
+    const { gridItems, alignmentItems } = this.props;
     const options = [];
     
     if (gridItems) {
-      for (let i = 0; i < items; i++) {
+      for (let i = 0; i < gridItems; i++) {
         options.push(<option value={i+1} key={i}>{i+1}</option>)
       }
       return options
-    } else if (alignment) {
-      items.forEach((item, i) => {
+    } else if (alignmentItems) {
+      alignmentItems.forEach((item, i) => {
         options.push(<option value={item} key={i}>{item}</option>)
       })
       return options
@@ -29,7 +28,7 @@ export default class Dropdown extends React.Component {
     const { name, defaultValue, className } = this.props;
 
     return (
-      <div className="interactive-item">
+      <div className="interactiveItem">
         <label htmlFor={name}>{ camelToTitle(name) }:</label>
         <select className="dropdown" 
           value={defaultValue} 

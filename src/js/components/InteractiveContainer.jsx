@@ -11,7 +11,7 @@ export default class InteractiveContainer extends React.Component {
     super();
 
     this.state = {
-      alignment: [
+      alignmentItems: [
         'start',
         'end',
         'center',
@@ -39,10 +39,10 @@ export default class InteractiveContainer extends React.Component {
 
   render() {
     const { gridGap, rowHeight, columnWidth, gridItems, columnsPerRow } = this.props;
-    const { alignment } = this.state;
+    const { alignmentItems } = this.state;
 
     return (
-      <div className="interactive-container">
+      <div className="interactiveContainer">
         <Button name="addItem" 
           onButtonClick={this.onButtonClick} />
         <Button name="removeItem" 
@@ -63,10 +63,10 @@ export default class InteractiveContainer extends React.Component {
           onSelectChange={this.onSelectChange} 
           defaultValue={columnsPerRow} />
         <Dropdown name="justifyContent"
-          alignment={alignment} 
+          alignmentItems={alignmentItems} 
           onSelectChange={this.onSelectChange} />
         <Dropdown name="alignContent"
-          alignment={alignment} 
+          alignmentItems={alignmentItems} 
           onSelectChange={this.onSelectChange} />
       </div>
     )

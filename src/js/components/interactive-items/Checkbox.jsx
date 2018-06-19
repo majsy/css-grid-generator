@@ -11,9 +11,11 @@ export default class Checkbox extends React.Component {
     const { name } = this.props;
 
     return (
-      <div className="interactive-item">
-        { camelToTitle(name) }:
+      <div className="interactiveItem">
+        <label htmlFor={name}>{ camelToTitle(name) }:</label>
         <input type="checkbox"
+          name={name}
+          id={name}
           onChange={this.onCheckboxChange} />
       </div>
     )

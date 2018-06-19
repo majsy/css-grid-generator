@@ -1,2 +1,124 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, ol, ul, li, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+div, header, footer {
+  box-sizing: border-box; }
+
+footer, header, menu, nav, section {
+  display: block; }
+
 body {
-  color: blue; }
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+.display1,
+.display2,
+.display3 {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.1;
+  letter-spacing: 0.8px;
+  color: #F4A698;
+  font-size: 50px; }
+
+.display1 {
+  font-weight: 700; }
+
+.display2 {
+  font-size: 16px;
+  line-height: 1.4; }
+
+.display3 {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'Inconsolata', monospace; }
+
+#app {
+  padding: 40px;
+  color: #F4A698;
+  background-color: #f8eae7;
+  height: 100vh; }
+  #app .upper-container {
+    display: flex;
+    justify-content: space-between; }
+.interactive-container {
+  margin-bottom: 30px; }
+  .interactive-container label {
+    margin-right: 5px; }
+  .interactive-container .interactive-item {
+    margin-bottom: 8px; }
+  .interactive-container .input {
+    border-radius: 2px;
+    height: 30px; }
+.interactive-item {
+  margin-bottom: 8px; }
+  .interactive-item label {
+    margin-right: 5px; }
+  .interactive-item .input {
+    border-radius: 2px;
+    height: 30px; }
+.gridContainer {
+  min-height: 420px;
+  height: auto;
+  display: grid;
+  padding: 30px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  margin-top: 30px;
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  justify-content: start;
+  align-content: center; }
+.gridItem {
+  background-color: #206457;
+  border-radius: 4px; }
+.display1,
+.display2,
+.display3,
+.CodeContainer ul li {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.1;
+  letter-spacing: 0.8px;
+  color: #F4A698;
+  font-size: 50px; }
+
+.display1 {
+  font-weight: 700; }
+
+.display2 {
+  font-size: 16px;
+  line-height: 1.4; }
+
+.display3, .CodeContainer ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'Inconsolata', monospace; }
+
+.CodeContainer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  height: 100%; }
+  .CodeContainer ul li {
+    padding-left: 20px;
+    color: #64B6AC; }
+    .CodeContainer ul li:first-child, .CodeContainer ul li:last-child {
+      padding-left: 0; }
+  .CodeContainer .button-copy {
+    padding: 10px 18px;
+    background-color: #206457;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px; }
+    .CodeContainer .button-copy span {
+      color: #ffffff;
+      font-size: 12px; }
+.header {
+  margin-bottom: 20px; }

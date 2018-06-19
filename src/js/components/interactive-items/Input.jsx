@@ -11,14 +11,14 @@ export default class Input extends React.Component {
     const { name, defaultValue, className } = this.props;
 
     return (
-      <div>
+      <div className="interactiveItem">
         <label htmlFor={name}>{ camelToTitle(name) }:</label>
           <input id={name}
             type="number" 
             name={name} 
             onChange={this.onInputChange} 
             value={defaultValue}
-            className={className} />
+            className="input" />
       </div>
     )
   }

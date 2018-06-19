@@ -1,6 +1,6 @@
 import React from 'react';
 import { camelToTitle } from '../../helper.js'
-import '../../../scss/components/_button-amount.scss';
+// import '../../../scss/components/interactive-items/_button.scss';
 
 export default class Button extends React.Component {
 
@@ -20,11 +20,12 @@ export default class Button extends React.Component {
     const { name } = this.props;
 
     return (
-      <div className="interactive-item">
-        <label>{ camelToTitle(name) }:</label>
-        <button className="buttonAmount" 
+      <div className="interactiveItem">
+        <label htmlFor={name}>{ camelToTitle(name) }:</label>
+        <button className="button" 
           onClick={this.onButtonClick}
-          name={name}>
+          name={name}
+          id={name}>
           {this.renderButtonIcon()}
         </button>
       </div>
