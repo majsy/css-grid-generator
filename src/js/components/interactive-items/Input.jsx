@@ -1,5 +1,6 @@
 import React from 'react';
-import { camelToTitle } from '../../helper.js'
+import { camelToTitle } from '../../helper.js';
+import '../../../scss/components/interactive-items/_input.scss';
 
 export default class Input extends React.Component {
 

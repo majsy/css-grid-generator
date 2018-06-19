@@ -1,0 +1,10 @@
+@import '../../base/typography';
+@import '../../base/variables';
+
+.input {
+  height: 24px;
+  cursor: pointer;
+  @extend .display2;
+  font-size: 12px;
+  color: $grey;
+}

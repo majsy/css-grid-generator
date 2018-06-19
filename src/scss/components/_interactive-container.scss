@@ -9,13 +9,8 @@
     align-items: center;
 
     label {
-      margin-right: 5px;
-      // text-transform: uppercase;
+      margin-right: 8px;
       @extend .display2;
-    }
-
-    .input {
-      height: 20px;
     }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { camelToTitle } from '../../helper.js'
-// import '../../../scss/components/interactive-items/_button.scss';
+import '../../../scss/components/interactive-items/_button.scss';
 
 export default class Button extends React.Component {
 

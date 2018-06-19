@@ -1,0 +1,18 @@
+@import '../../base/variables';
+@import '../../base/ease';
+
+.button {
+  height: 22px;
+  width: 22px;
+  border-radius: $border-radius;
+  border: none;
+  background-color: $pink-darker;
+  color: $white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 250ms $cubic-ease-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

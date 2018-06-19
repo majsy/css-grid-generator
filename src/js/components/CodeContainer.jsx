@@ -63,7 +63,7 @@ export default class CodeContainer extends React.Component {
         <CopyToClipboard text={this.stylesToString()} 
           onCopy={this.onCopy}>
           <button className="button-copy">
-            <span className="display2">copy CSS</span>
+            <span className="display2">Copy CSS</span>
           </button>
         </CopyToClipboard>
       </div>

@@ -8,18 +8,20 @@
   line-height: 1.1;
   letter-spacing: 0.8px;
   color: $pink-dark;
-  font-size: 50px;
+  font-size: 42px;
 }
 
 .display1 {
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .display2 {
   font-size: 14px;
   line-height: 1.4;
-  letter-spacing: 0.2px;
-  // font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase
+  // font-family: 'Roboto-Condensed', sans-serif;
 }
 
 .display3 {

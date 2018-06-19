@@ -1,5 +1,6 @@
 @import '../base/variables';
 @import '../base/typography';
+@import '../base/ease';
 
 .CodeContainer {
   background-color: $white;
@@ -26,6 +27,12 @@
     border: none;
     border-radius: $border-radius;
     margin-top: 15px;
+    cursor: pointer;
+    transition: all 250ms $cubic-ease-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     span {
       color: $white;
