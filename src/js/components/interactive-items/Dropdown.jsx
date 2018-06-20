@@ -1,5 +1,6 @@
 import React from 'react';
 import { camelToTitle } from '../../helper.js';
+import '../../../scss/components/interactive-items/_dropdown.scss';
 
 export default class Dropdown extends React.Component {
 

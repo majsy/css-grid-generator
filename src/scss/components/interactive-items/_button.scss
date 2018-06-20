@@ -5,14 +5,26 @@
   height: 22px;
   width: 22px;
   border-radius: $border-radius;
-  border: none;
+  box-shadow: 0 0 0 1px $pink-darker;
   background-color: $pink-darker;
   color: $white;
   font-size: 12px;
   cursor: pointer;
   transition: all 250ms $cubic-ease-out;
+  outline: none;
+  border-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &:focus {
+    display: inline-block;
+    box-shadow: 0 0 0 1px $coral;
+    border-radius: $border-radius;
   }
 }

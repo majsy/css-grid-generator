@@ -6,7 +6,8 @@
   padding: 40px;
   color: $pink-dark;
   background-color: $pink-bright;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 
   .upper-container {
     display: flex;
