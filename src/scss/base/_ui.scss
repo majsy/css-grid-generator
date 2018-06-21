@@ -1,0 +1,26 @@
+@import '../../base/variables';
+@import '../../base/ease';
+@import '../../base/typography';
+
+.uiFormItem {
+  cursor: pointer;
+  border-color: transparent;
+  border-radius: $border-radius;
+  outline: none;
+  transition: all 250ms $cubic-ease-out;
+}
+
+.uiFormInput {
+  height: $input-height;
+  width: $input-width;
+  font-size: 11px;
+  color: $grey;
+  background-color: $white;
+  @extend .display2;
+  box-shadow: 0 0 0 1px $grey-bright;
+
+  &:focus {
+    display: inline-block;
+    box-shadow: 0 0 0 1px $coral;
+  }
+}

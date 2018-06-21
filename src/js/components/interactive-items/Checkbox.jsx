@@ -1,6 +1,6 @@
 import React from 'react';
 import { camelToTitle } from '../../helper.js'
-// import '../../../scss/components/_button-amount.scss';
+import '../../../scss/components/interactive-items/_checkbox.scss';
 
 export default class Checkbox extends React.Component {
   onCheckboxChange = () => {
@@ -11,12 +11,15 @@ export default class Checkbox extends React.Component {
     const { name } = this.props;
 
     return (
-      <div className="interactiveItem">
-        <label htmlFor={name}>{ camelToTitle(name) }:</label>
-        <input type="checkbox"
-          name={name}
-          id={name}
-          onChange={this.onCheckboxChange} />
+      <div className="interactiveItem checkbox">
+        <label htmlFor={name}>{ camelToTitle(name) }:
+          <input type="checkbox"
+            name={name}
+            id={name}
+            className="checkboxInput"
+            onChange={this.onCheckboxChange} />
+          <span className="checkboxCustom"></span>
+        </label>
       </div>
     )
   }

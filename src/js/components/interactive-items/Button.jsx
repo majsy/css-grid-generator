@@ -26,7 +26,7 @@ export default class Button extends React.Component {
           onClick={this.onButtonClick}
           name={name}
           id={name}>
-          {this.renderButtonIcon()}
+          <span>{this.renderButtonIcon()}</span>
         </button>
       </div>
     )

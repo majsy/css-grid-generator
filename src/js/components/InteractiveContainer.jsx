@@ -56,12 +56,12 @@ export default class InteractiveContainer extends React.Component {
         <Input name="columnWidth" 
           onInputChange={this.onInputChange}
           defaultValue={columnWidth} />
-        <Checkbox name="stretchColumns" 
-          onCheckboxChange={this.onCheckboxChange} />
         <Dropdown name="columnsPerRow" 
           gridItems={gridItems} 
           onSelectChange={this.onSelectChange} 
           defaultValue={columnsPerRow} />
+        <Checkbox name="stretchColumns" 
+          onCheckboxChange={this.onCheckboxChange} />
         <Dropdown name="justifyContent"
           alignmentItems={alignmentItems} 
           onSelectChange={this.onSelectChange} />

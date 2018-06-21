@@ -1,22 +1,6 @@
-@import '../../base/variables';
-@import '../../base/typography';
+@import '../../base/ui';
 
 .dropdown {
-  height: $input-height;
-  width: $input-width;
-  box-shadow: 0 0 0 1px $grey-bright;
-  border-color: transparent;
-  background-color: $white;
-  @extend .display2;
-  font-size: 11px;
-  color: $grey;
-  border-radius: $border-radius;
-  cursor: pointer;
-  outline: none;
-  
-  &:focus {
-    display: inline-block;
-    box-shadow: 0 0 0 1px $coral;
-    border-radius: $border-radius;
-  }
+  @extend .uiFormItem;
+  @extend .uiFormInput;
 }
