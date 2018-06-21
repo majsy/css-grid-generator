@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 0 2px $pink-darker;
 
   span {
     pointer-events: none;
@@ -21,6 +22,6 @@
   }
 
   &:focus {
-    background-color: $coral;
+    box-shadow: 0 0 0 2px $blue;
   }
 }

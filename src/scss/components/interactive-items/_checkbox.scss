@@ -43,11 +43,10 @@
 
 // focus state
 [type=checkbox]:focus + span {
-  box-shadow: 0 0 0 1px $coral;
+  box-shadow: 0 0 0 2px $blue;
 }
 
 // checked + focus state
 [type=checkbox]:checked:focus + span {
-  box-shadow: 0 0 0 1px $coral;
-  background-color: $coral;
+  box-shadow: 0 0 0 2px $blue;
 }

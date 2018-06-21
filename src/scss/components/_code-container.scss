@@ -1,7 +1,6 @@
 @import '../base/variables';
 @import '../base/typography';
 @import '../base/ease';
-// @import '../base/ui';
 
 .CodeContainer {
   background-color: $white;
@@ -31,14 +30,14 @@
     outline: none;
     transition: all 250ms $cubic-ease-out;
 
-
     padding: 10px 18px;
     background-color: $green;
     margin-top: 15px;
+    box-shadow: 0 0 0 1px $green;
 
     &:focus {
       display: inline-block;
-      background-color: $green-bright;
+      box-shadow: 0 0 0 2px $blue;
     }
 
     &:hover {
