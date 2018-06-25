@@ -3,4 +3,12 @@
 .gridItem {
   background-color: $green;
   border-radius: $border-radius;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .item-number {
+    text-align: center;
+    color: $white;
+  }
 }

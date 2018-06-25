@@ -2,22 +2,34 @@
 
 .interactiveContainer {
   margin-bottom: 30px;
+  display: flex;
 
-  .interactiveItem {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
+  .styleContainerTitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 
-    label {
-      margin-right: 8px;
-      @extend .display2;
-    }
-
-    &.checkbox {
+  .gridStylesContainer {
+    .interactiveItem {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+  
       label {
-        display: flex;
-        align-items: center;
+        margin-right: 8px;
+        @extend .display2;
+      }
+  
+      &.checkbox {
+        label {
+          display: flex;
+          align-items: center;
+        }
       }
     }
+  }  
+
+  .itemStylesContainer {
+
   }
 }

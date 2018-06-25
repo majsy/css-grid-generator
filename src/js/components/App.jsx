@@ -71,6 +71,12 @@ export default class App extends React.Component {
       alignContent: this.state.alignContent
     }
 
+    const itemStyles = [
+      
+    ]
+
+    
+
     const { gridGap, rowHeight, gridItems, columnsPerRow, columnWidth } = this.state;
 
     return (
@@ -81,7 +87,6 @@ export default class App extends React.Component {
             onInputChange={this.onInputChange}
             onSelectChange={this.onSelectChange}
             onCheckboxChange={this.onCheckboxChange}
-
             gridGap={gridGap}
             rowHeight={rowHeight}
             gridItems={gridItems}

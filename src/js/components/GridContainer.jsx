@@ -8,7 +8,7 @@ export default class GridContainer extends React.Component {
     const items = [];
 
     for (let i = 0; i < gridItems; i++) {
-      items.push(<GridItem key={i} />)
+      items.push(<GridItem key={i} number={i+1} />)
     }
     return items
   }
