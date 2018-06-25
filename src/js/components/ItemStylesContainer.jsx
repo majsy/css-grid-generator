@@ -9,28 +9,31 @@ export default class ItemStylesContainer extends React.Component {
     super();
 
     this.state = {
-      currentItem: 1,
       stylesItem1: {
         gridColumn: 1,
         gridRow: 1
       }
     }
   }
+  
+  onSelectChange = (e) => {
+    console.log('hello')
+    this.props.onSelectChange(e)
+  }
 
   render() {
-    const { gridGap, rowHeight, columnWidth, gridItems, columnsPerRow } = this.props;
-    const { alignmentItems } = this.state;
+    const { columnsPerRow, currentGridItem } = this.props;
 
     return (
       <div className="itemStylesContainer">
-        <h2 className="display1 styleContainerTitle">Item Styles</h2>
-        <Dropdown name="columnsPerRow" 
-          gridItems={gridItems} 
+        <h2 className="display1 styleContainerTitle">Item {currentGridItem} Styles</h2>
+        <Dropdown name="gridColumn" 
+          itemGridColumn={columnsPerRow} 
           onSelectChange={this.onSelectChange} 
-          defaultValue={columnsPerRow} />
-        <Input name="columnWidth" 
+          defaultValue="auto" />
+        <Input name="gridRow" 
           onInputChange={this.onInputChange}
-          defaultValue={columnWidth} />
+          defaultValue={currentGridItem} />
       </div>
     )
   }

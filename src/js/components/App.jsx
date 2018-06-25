@@ -17,16 +17,9 @@ export default class App extends React.Component {
       columnsPerRow: 3,
       justifyContent: 'start',
       alignContent: 'start',
-      colIsStretched: false
+      colIsStretched: false,
+      currentGridItem: 1
     }
-  }
-
-  onClickAdd = () => {
-    this.setState({gridItems: this.state.gridItems + 1})
-  }
-
-  onClickRemove = () => {
-    this.setState({gridItems: this.state.gridItems - 1})
   }
 
   onButtonClick = (e) => {
@@ -77,7 +70,7 @@ export default class App extends React.Component {
 
     
 
-    const { gridGap, rowHeight, gridItems, columnsPerRow, columnWidth } = this.state;
+    const { gridGap, rowHeight, gridItems, columnsPerRow, columnWidth, currentGridItem } = this.state;
 
     return (
       <div>
@@ -91,7 +84,8 @@ export default class App extends React.Component {
             rowHeight={rowHeight}
             gridItems={gridItems}
             columnsPerRow={columnsPerRow}
-            columnWidth={columnWidth} />
+            columnWidth={columnWidth}
+            currentGridItem={currentGridItem} />
           <CodeContainer gridStyles={gridStyles} />
         </div>
         <GridContainer gridStyles={gridStyles}

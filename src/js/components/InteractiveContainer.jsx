@@ -22,7 +22,7 @@ export default class InteractiveContainer extends React.Component {
   }
 
   render() {
-    const { gridGap, rowHeight, columnWidth, gridItems, columnsPerRow } = this.props;
+    const { gridGap, rowHeight, columnWidth, gridItems, columnsPerRow, currentGridItem } = this.props;
 
     return (
       <div className="interactiveContainer">
@@ -36,7 +36,10 @@ export default class InteractiveContainer extends React.Component {
           gridItems={gridItems}
           columnsPerRow={columnsPerRow}
           columnWidth={columnWidth} />
-        <ItemStylesContainer />
+        <ItemStylesContainer 
+          currentGridItem={currentGridItem}
+          columnsPerRow={columnsPerRow}
+          onSelectChange={this.onSelectChange} />
       </div>
     )
   }
