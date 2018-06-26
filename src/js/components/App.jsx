@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../scss/main.scss';
 import InteractiveContainer from './InteractiveContainer.jsx';
 import GridContainer from './GridContainer.jsx';
 import CodeContainer from './CodeContainer.jsx';
@@ -18,9 +17,12 @@ export default class App extends React.Component {
       justifyContent: 'start',
       alignContent: 'start',
       colIsStretched: false,
-      currentGridItem: 1
+      currentGridItem: undefined,
+      gridItemStyles: []
     }
   }
+
+  // Grid Container Functions
 
   onButtonClick = (e) => {
     let button = e.target;
@@ -38,11 +40,32 @@ export default class App extends React.Component {
 
   onSelectChange = (e) => {
     let select = e.target;
-    this.setState({[select.name]: select.value})
+    if (select.name === 'gridColumn') {
+
+      let itemStyle = `item_${this.state.currentGridItem}`;
+      itemStyle = {
+        [select.name]: select.value
+      }
+
+      this.setState({
+        gridItemStyles: [...this.state.gridItemStyles, {itemStyle}]
+      })
+    } else {
+      this.setState({[select.name]: select.value})
+    }
   }
 
   onCheckboxChange = () => {
     this.setState({colIsStretched: !this.state.colIsStretched})
+  }
+
+  // Grid Item Functions
+
+  onGridItemClick = (e) => {
+    const item = e.target.getElementsByTagName('p');
+    const itemNumber = Number(item[0].innerHTML);
+
+    this.setState({ currentGridItem: itemNumber })
   }
 
   renderColumnWidth() {
@@ -68,8 +91,6 @@ export default class App extends React.Component {
       
     ]
 
-    
-
     const { gridGap, rowHeight, gridItems, columnsPerRow, columnWidth, currentGridItem } = this.state;
 
     return (
@@ -89,7 +110,8 @@ export default class App extends React.Component {
           <CodeContainer gridStyles={gridStyles} />
         </div>
         <GridContainer gridStyles={gridStyles}
-          gridItems={gridItems} />
+          gridItems={gridItems}
+          onGridItemClick={this.onGridItemClick} />
       </div>
     )
   }

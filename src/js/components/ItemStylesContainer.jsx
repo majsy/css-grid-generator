@@ -9,20 +9,17 @@ export default class ItemStylesContainer extends React.Component {
     super();
 
     this.state = {
-      stylesItem1: {
-        gridColumn: 1,
-        gridRow: 1
-      }
+      
     }
   }
   
   onSelectChange = (e) => {
-    console.log('hello')
     this.props.onSelectChange(e)
   }
 
   render() {
     const { columnsPerRow, currentGridItem } = this.props;
+    const itemDefault = undefined;
 
     return (
       <div className="itemStylesContainer">
@@ -30,10 +27,10 @@ export default class ItemStylesContainer extends React.Component {
         <Dropdown name="gridColumn" 
           itemGridColumn={columnsPerRow} 
           onSelectChange={this.onSelectChange} 
-          defaultValue="auto" />
+          defaultValue={itemDefault} />
         <Input name="gridRow" 
           onInputChange={this.onInputChange}
-          defaultValue={currentGridItem} />
+          defaultValue={itemDefault} />
       </div>
     )
   }
