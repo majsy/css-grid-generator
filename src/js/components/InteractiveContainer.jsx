@@ -2,7 +2,7 @@ import React from 'react';
 import '../../scss/components/_interactive-container.scss';
 
 import GridStylesContainer from './GridStylesContainer.jsx';
-import ItemStylesContainer from './ItemStylesContainer.jsx';
+// import ItemStylesContainer from './ItemStylesContainer.jsx';
 
 export default class InteractiveContainer extends React.Component {
   onButtonClick = (e) => {
@@ -36,10 +36,10 @@ export default class InteractiveContainer extends React.Component {
           gridItems={gridItems}
           columnsPerRow={columnsPerRow}
           columnWidth={columnWidth} />
-        <ItemStylesContainer 
+        {/* <ItemStylesContainer 
           currentGridItem={currentGridItem}
           columnsPerRow={columnsPerRow}
-          onSelectChange={this.onSelectChange} />
+          onSelectChange={this.onSelectChange} /> */}
       </div>
     )
   }
