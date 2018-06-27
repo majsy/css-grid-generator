@@ -17,7 +17,7 @@ export default class App extends React.Component {
       justifyContent: 'start',
       alignContent: 'start',
       colIsStretched: false,
-      currentGridItem: undefined,
+      currentGridItem: 1,
       gridItemStyles: []
     }
   }

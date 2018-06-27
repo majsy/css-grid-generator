@@ -22,7 +22,7 @@ export default class ItemStylesContainer extends React.Component {
     const itemDefault = undefined;
 
     return (
-      <div className="itemStylesContainer">
+      <form className="itemStylesContainer">
         <h2 className="display1 styleContainerTitle">Item {currentGridItem} Styles</h2>
         <Dropdown name="gridColumn" 
           itemGridColumn={columnsPerRow} 
@@ -31,7 +31,10 @@ export default class ItemStylesContainer extends React.Component {
         <Input name="gridRow" 
           onInputChange={this.onInputChange}
           defaultValue={itemDefault} />
-      </div>
+        <button className="buttonApply">
+          <span className="display2">Apply Item Styles</span>
+        </button>
+      </form>
     )
   }
 }
