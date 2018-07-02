@@ -1,4 +1,5 @@
 @import '../base/variables';
+@import '../base/ease';
 
 .gridContainer {
   // non changeable styles
@@ -9,6 +10,7 @@
   border-radius: $border-radius;
   background-color: $white;
   margin-top: 30px;
+  transition: all 400ms $cubic-ease-out;
 
   grid-gap: 10px;
   grid-auto-rows: 100px;

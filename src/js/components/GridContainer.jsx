@@ -15,9 +15,9 @@ export default class GridContainer extends React.Component {
 
   render() {
     return (
-      <div className="gridContainer" style={this.props.gridStyles}>
+      <section className="gridContainer" style={this.props.gridStyles}>
         { this.renderGridItems() }
-      </div>
+      </section>
     )
   }
 } 
